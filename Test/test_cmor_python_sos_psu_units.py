@@ -83,9 +83,9 @@ class TestCase(base_test_cmor_python.BaseCmorTest):
                 file = cmor.close(ivar, True)
                 file1 = cmor.close(ivar2, True)
                 file2 = cmor.close(ivar3, True)
-                print 'File:', file
-                print 'File:', file1
-                print 'File:', file2
+                print('File: %s'%(file))
+                print('File: %s'%(file1))
+                print('File: %s'%(file2))
             cmor.close()
             self.processLog()
         except BaseException:

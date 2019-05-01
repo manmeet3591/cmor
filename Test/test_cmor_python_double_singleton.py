@@ -15,7 +15,7 @@ class TestCase(base_test_cmor_python.BaseCmorTest):
 
             cmor.dataset_json(os.path.join(self.testdir, "CMOR_input_example.json"))
             cmor.load_table(os.path.join(self.tabledir, 'CMIP6_6hrLev.json'))
-            itim, ilat, ilon = common.read_cmor_time_lat_lon()
+            itim, ilat, ilon = common.read_cmor_time1_lat_lon()
 
             ilambda = cmor.axis(
                 table_entry='lambda550nm',
