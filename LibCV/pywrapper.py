@@ -5,11 +5,12 @@ Created on Fri Feb 19 11:33:52 2016
 @author: Denis Nadeau LLNL, Charles Doutriaux LLNL
 '''
 
-import cmor_const
+from cmip6_cv import cmor_const
 import numpy
 import os
-import _cmip6_cv
+from cmip6_cv import _cmip6_cv
 import signal
+import six
 
 
 def sig_handler(signum, frame):
@@ -97,7 +98,7 @@ def load_table(table):
     Usage:
     load_table(table)
     """
-    if not isinstance(table, str):
+    if not isinstance(table, six.string_types):
         raise Exception("Error, must pass a string")
 #     if not os.path.exists(table):
 #         raise Exception, "Error, the table you specified (%s) does not exists" % table

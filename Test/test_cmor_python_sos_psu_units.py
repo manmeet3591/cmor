@@ -1,3 +1,4 @@
+from __future__ import print_function
 import cmor
 import numpy
 import os
@@ -65,9 +66,9 @@ class TestCase(base_test_cmor_python.BaseCmorTest):
                 for i in range(4):
                     tval = [i / 4. + d]
                     tbnd = [i / 4. + d - 0.125, i / 4. + d + 0.125]
-                    print 'tvar', tval
-                    print 'tbnd', tbnd
-                    print 'writing time:', i, i / 4.
+                    print('tvar', tval)
+                    print('tbnd', tbnd)
+                    print('writing time:', i, i / 4.)
                     data = numpy.random.random(
                         (ntimes, nlat, nlon)) * 30. + 273
                     data = data.astype("f")
@@ -78,7 +79,7 @@ class TestCase(base_test_cmor_python.BaseCmorTest):
                     tval = [i / 4. + d + 200]
                     tbnd = [i / 4. + d + 200 - 0.125, i / 4. + d + 200 + 0.125]
                     cmor.write(ivar3, data, time_vals=tval, time_bnds=tbnd)
-                    print 'wrote var 1 time:', i
+                    print('wrote var 1 time:', i)
                 file = cmor.close(ivar, True)
                 file1 = cmor.close(ivar2, True)
                 file2 = cmor.close(ivar3, True)
