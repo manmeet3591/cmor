@@ -25,7 +25,7 @@ int main()
     double lat_vertices[2 * nlon] = {79, 81};
     double olev_val[nlev] = {5000., 3000., 2000., 1000.};
     double olev_bnds[nlev + 1] = {5000., 3000., 2000., 1000., 0};
-    double zhalfo_data[ntimes] = {274., 274.};
+    double zhalfo_data[ntimes][nlat * nlon * nlev] = {{274., 274., 274., 274.}, {274., 274., 274., 274.}};
 
     int exit_mode = CMOR_NORMAL;
     int cmor_mode = CMOR_REPLACE;

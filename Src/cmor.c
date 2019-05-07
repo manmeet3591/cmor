@@ -4366,7 +4366,29 @@ int cmor_write(int var_id, void *data, char type, char *file_suffix,
                           CMOR_CRITICAL);
         cmor_pop_traceback();
         return (-1);
-    };
+    }
+
+/* -------------------------------------------------------------------- */
+/*    Make sure that the number of times being passed to cmor_write     */
+/*    combined with the number of times written does not exceed the     */
+/*    length of the time axis.                                          */
+/* -------------------------------------------------------------------- */
+    if (ntimes_passed > 0) {
+        for(i = 0; i < cmor_vars[var_id].ndims; ++i) {
+            if(cmor_axes[cmor_vars[var_id].axes_ids[i]].axis == 'T'
+                && cmor_axes[cmor_vars[var_id].axes_ids[i]].length > 0
+                && (cmor_vars[var_id].ntimes_written + ntimes_passed
+                > cmor_axes[cmor_vars[var_id].axes_ids[i]].length)) {
+
+                cmor_handle_error("The number of times passed combined "
+                                  "with the number of times written must "
+                                  "not exceed the length of the time axis", 
+                                  CMOR_CRITICAL);
+                cmor_pop_traceback();
+                return (-1);
+            }
+        }
+    }
 
     ierr += cmor_addVersion();
     ierr += cmor_addRIPF(ctmp);
