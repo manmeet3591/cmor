@@ -4368,6 +4368,27 @@ int cmor_write(int var_id, void *data, char type, char *file_suffix,
         return (-1);
     }
 
+    ierr += cmor_addVersion();
+    ierr += cmor_addRIPF(ctmp);
+
+/* -------------------------------------------------------------------- */
+/*    Make sure that variable_id is set Global Attributes and for       */
+/*    File and Path template                                            */
+/* -------------------------------------------------------------------- */
+    cmor_set_cur_dataset_attribute_internal(GLOBAL_ATT_VARIABLE_ID,
+                                            cmor_vars[var_id].id, 1);
+    ctmp[0] = '\0';
+/* -------------------------------------------------------------------- */
+/*      here we check that the variable actually has all                */
+/*      the required attributes set                                     */
+/* -------------------------------------------------------------------- */
+    ierr += cmor_has_required_variable_attributes(var_id);
+
+/* -------------------------------------------------------------------- */
+/*  Do we have associated variables (z_factors)?                        */
+/* -------------------------------------------------------------------- */
+    refvarid = cmor_set_refvar(var_id, refvar, ntimes_passed);
+
 /* -------------------------------------------------------------------- */
 /*    Make sure that the number of times being passed to cmor_write     */
 /*    combined with the number of times written does not exceed the     */
@@ -4389,27 +4410,6 @@ int cmor_write(int var_id, void *data, char type, char *file_suffix,
             }
         }
     }
-
-    ierr += cmor_addVersion();
-    ierr += cmor_addRIPF(ctmp);
-
-/* -------------------------------------------------------------------- */
-/*    Make sure that variable_id is set Global Attributes and for       */
-/*    File and Path template                                            */
-/* -------------------------------------------------------------------- */
-    cmor_set_cur_dataset_attribute_internal(GLOBAL_ATT_VARIABLE_ID,
-                                            cmor_vars[var_id].id, 1);
-    ctmp[0] = '\0';
-/* -------------------------------------------------------------------- */
-/*      here we check that the variable actually has all                */
-/*      the required attributes set                                     */
-/* -------------------------------------------------------------------- */
-    ierr += cmor_has_required_variable_attributes(var_id);
-
-/* -------------------------------------------------------------------- */
-/*  Do we have associated variables (z_factors)?                        */
-/* -------------------------------------------------------------------- */
-    refvarid = cmor_set_refvar(var_id, refvar, ntimes_passed);
 
 /* -------------------------------------------------------------------- */
 /*      Here we check that the types are consistent between             */
