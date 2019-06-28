@@ -1,0 +1,60 @@
+varname, cmorname, positive,scale
+
+pr, pr,   
+ts, ts,   
+rsus, rsus, up
+tas, tas,   
+sfcWind, sfcWind,   
+#tauu, tauu, down,-1
+rsuscs, rsuscs, up 
+clt, clt,   
+rsdt, rsdt, down 
+rlut, rlut, up
+clwvi, clwvi,   
+huss, huss,
+rsds, rsds, down   
+prc, prc, 
+prsn, prsn,   
+hfss, hfss, up
+#lprecip_c, lprecip_c,   
+#fprecip_c, fprecip_c,   
+#lprecip, lprecip,   
+rlus, rlus, up   
+rsut, rsut, up
+rsdscs, rsdscs, down   
+#tauv, tauv, down ,-1
+rlutcs, rlutcs, up  
+rlds, rlds, down
+evspsbl, evspsbl, up
+clivi, clivi,   
+rsutcs, rsutcs, up
+rldscs, rldscs, up  
+hfls, hfls, up   
+vas, vas,
+uas, uas,   
+ccb, ccb,   
+cct, cct,   
+ci, ci,   
+hurs, hurs,   
+#rluscs, rluscs, up  
+#rsdsdiff, rsdsdiff, down   
+#tran, tran, up
+#mrso, mrso,   
+#topo, topo,   
+#mrro, mrro,   
+#nirdiralb, nirdiralb,   
+#visdiralb, visdiralb,   
+#nirdifalb, nirdifalb,   
+#visdifalb, visdifalb,   
+#alb, alb,   
+#lowcld, lowcld,   
+#midcld, midcld,   
+#highcld, highcld,   
+#snc, snc,   
+#sheleg, sheleg,   
+#gflx, gflx,   
+#snlhflx, snlhflx,   
+#snwdph, snwdph,   
+#evbs, evbs,   
+#evcw, evcw,   
+#tso, tso,   
