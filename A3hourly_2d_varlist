@@ -1,0 +1,16 @@
+varname, cmorname, positive
+pr, pr
+hfls, hfls, up
+hfss, hfss, up
+rlds, rlds, down
+rlus, rlus, up
+rsds, rsds, down
+rsus, rsus, up
+prc, prc,
+prsn, prsn,
+rldscs, rldscs, down
+rsdscs, rsdscs, down
+rsuscs, rsuscs, up
+clt, clt,
+rsdsdiff, rsdsdiff, down
+

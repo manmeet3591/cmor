@@ -1,0 +1,6 @@
+varname,cmorname,positive,units
+sss,sos,, 
+sst,tos,,degC
+#eta_t,eta_t,,
+mld,mlotst,,
+pco2surf,spco2,,

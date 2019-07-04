@@ -1,0 +1,14 @@
+varname,cmorname,positive,units
+temp,thetao,,degC
+salt,so,,
+#rho,rho,,
+u,uo,,
+v,vo,,
+wt,wo,,
+chl,chl,,mg m-3
+fed,dfe,,kmol m-3
+nh4,nh4,,kmol m-3
+no3,no3,,kmol m-3
+o2,o2,,kmol m-3
+po4,po4,,kmol m-3
+#sio4,sio4,,
